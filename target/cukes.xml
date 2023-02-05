@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="5" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="19" time="191.572">
+<testcase classname="F01_Register | users could register with new accounts" name="guest user could register with valid data successfully" time="13.452">
+<system-out><![CDATA[Given user go to register page..............................................passed
+When user select gender type................................................passed
+And user enter first name "automation" and last name "tester"...............passed
+And user enter date of birth................................................passed
+And user enter email "test@example.com" field...............................passed
+And user fills Password fields "P@ssw0rd" "P@ssw0rd"........................passed
+And user clicks on register button..........................................passed
+Then success message is displayed...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with valid email and password" time="7.061">
+<failure message="expected [https://demo.nopcommerce.com/] but found [https://demo.nopcommerce.com/login?returnurl=%2F]" type="java.lang.AssertionError"><![CDATA[Given user go to login page.................................................passed
+When login with valid "test@example.com" and "P@ssw0rd".....................passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [https://demo.nopcommerce.com/] but found [https://demo.nopcommerce.com/login?returnurl=%2F]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.stepDefs.D02_loginStepDef.user_login_to_the_system_successfully(D02_loginStepDef.java:40)
+	at ✽.user login to the system successfully(file:///D:/project/demonopcommerce/src/main/resources/features/F02_Login.feature:7)
+]]></failure>
+</testcase>
+<testcase classname="F02_Login | users could use login functionality to use their accounts" name="user could login with invalid email and password" time="7.189">
+<system-out><![CDATA[Given user go to login page.................................................passed
+When user login with invalid "wrong@example.com" and "P@ssw0rd".............passed
+And user press on login button..............................................passed
+Then user could not login to the system.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F03_Currencies | User could switch between dollar and euro" name="user could switch currencies" time="9.025">
+<system-out><![CDATA[When user chooses from currency droplist and chooses euro...................passed
+Then Verify Euro Symbol (€) is shown on the four products displayed in Home page.passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for product" name="user could search using product name" time="8.843">
+<system-out><![CDATA[When user presses on search field...........................................passed
+And user enters name "book" and user press on search button.................passed
+Then user will find all related products "book".............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for product" name="user could search using product name 2" time="7.191">
+<system-out><![CDATA[When user presses on search field...........................................passed
+And user enters name "laptop" and user press on search button...............passed
+Then user will find all related products "laptop"...........................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for product" name="user could search using product name 3" time="6.975">
+<system-out><![CDATA[When user presses on search field...........................................passed
+And user enters name "nike" and user press on search button.................passed
+Then user will find all related products "nike".............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for product" name="user could search using product SKU" time="9.842">
+<system-out><![CDATA[When user presses on search field...........................................passed
+And user enters SKU "SCI_FAITH" and user presses on search button...........passed
+Then user will find related products "SCI_FAITH"............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for product" name="user could search using product SKU 2" time="9.58">
+<system-out><![CDATA[When user presses on search field...........................................passed
+And user enters SKU "APPLE_CAM" and user presses on search button...........passed
+Then user will find related products "APPLE_CAM"............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04_Search | user could search for product" name="user could search using product SKU 3" time="9.537">
+<system-out><![CDATA[When user presses on search field...........................................passed
+And user enters SKU "SF_PRO_11" and user presses on search button...........passed
+Then user will find related products "SF_PRO_11"............................passed
+]]></system-out>
+</testcase>
+<testcase classname="F05_hoverCategories | user could select different categories" name="user could select different categories then hover on them and select sub category" time="10.991">
+<system-out><![CDATA[When user hovers on random category.........................................passed
+And user selects random subcategory.........................................passed
+Then subcategory page appears...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F06_homeSliders | user could select home slider and open it" name="user could select First home slider and open it" time="8.471">
+<failure message="expected [https://demo.nopcommerce.com/iphone-14] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[When user click on first home slider iphone.................................passed
+Then user is redirected to iphone details page..............................failed
+
+StackTrace:
+java.lang.AssertionError: expected [https://demo.nopcommerce.com/iphone-14] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.stepDefs.D06_homeSlidersStepDef.userIsRedirectedToIphoneDetailsPage(D06_homeSlidersStepDef.java:22)
+	at ✽.user is redirected to iphone details page(file:///D:/project/demonopcommerce/src/main/resources/features/F06_homeSliders.feature:5)
+]]></failure>
+</testcase>
+<testcase classname="F06_homeSliders | user could select home slider and open it" name="user could select Second home slider and open it" time="12.561">
+<failure message="expected [https://demo.nopcommerce.com/galaxy-s22] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[When user click on second home slider galaxy................................passed
+Then user is redirected to galaxy details page..............................failed
+
+StackTrace:
+java.lang.AssertionError: expected [https://demo.nopcommerce.com/galaxy-s22] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.stepDefs.D06_homeSlidersStepDef.userIsRedirectedToGalaxyDetailsPage(D06_homeSlidersStepDef.java:36)
+	at ✽.user is redirected to galaxy details page(file:///D:/project/demonopcommerce/src/main/resources/features/F06_homeSliders.feature:9)
+]]></failure>
+</testcase>
+<testcase classname="F07_followUs | user opens social links" name="user opens facebook link" time="8.35">
+<failure message="expected [https://www.facebook.com/nopCommerce] but found [https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FnopCommerce]" type="java.lang.AssertionError"><![CDATA[When user clicks on facebook icon...........................................passed
+Then user navigates to facebook page "https://www.facebook.com/nopCommerce".failed
+
+StackTrace:
+java.lang.AssertionError: expected [https://www.facebook.com/nopCommerce] but found [https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FnopCommerce]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at org.example.stepDefs.D07_followUsStepDef.userNavigatesToFacebookPage(D07_followUsStepDef.java:29)
+	at ✽.user navigates to facebook page "https://www.facebook.com/nopCommerce"(file:///D:/project/demonopcommerce/src/main/resources/features/F07_followUs.feature:5)
+]]></failure>
+</testcase>
+<testcase classname="F07_followUs | user opens social links" name="user opens twitter link" time="10.093">
+<system-out><![CDATA[When user clicks on twitter icon............................................passed
+Then user navigates to twitter page "https://twitter.com/nopCommerce".......passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | user opens social links" name="user opens rss link" time="14.035">
+<failure message="Expected condition failed: waiting for number of open windows to be 2 (tried for 7 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.8.0', revision: '267030adea'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'&#10;Driver info: org.openqa.selenium.edge.EdgeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 109.0.1518.70, ms:edgeOptions: {debuggerAddress: localhost:63875}, msedge: {msedgedriverVersion: 109.0.1518.70 (f787d2c3a418..., userDataDir: C:\Users\LAPTOP\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63875/devtoo..., se:cdpVersion: 109.0.1518.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 56336205d912623997f24ca5712ec02d" type="org.openqa.selenium.TimeoutException"><![CDATA[When user clicks on rss icon................................................failed
+Then user navigates to rss page "https://demo.nopcommerce.com/new-online-store-is-open".skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 7 second(s) with 500 milliseconds interval)
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: msedge, browserVersion: 109.0.1518.70, ms:edgeOptions: {debuggerAddress: localhost:63875}, msedge: {msedgedriverVersion: 109.0.1518.70 (f787d2c3a418..., userDataDir: C:\Users\LAPTOP\AppData\Loc...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:63875/devtoo..., se:cdpVersion: 109.0.1518.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 56336205d912623997f24ca5712ec02d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at org.example.stepDefs.D07_followUsStepDef.userClicksOnRssIcon(D07_followUsStepDef.java:53)
+	at ✽.user clicks on rss icon(file:///D:/project/demonopcommerce/src/main/resources/features/F07_followUs.feature:10)
+]]></failure>
+</testcase>
+<testcase classname="F07_followUs | user opens social links" name="user opens youtube link" time="8.981">
+<system-out><![CDATA[When user clicks on youtube icon............................................passed
+Then user navigates to youtube page "https://www.youtube.com/user/nopCommerce".passed
+]]></system-out>
+</testcase>
+<testcase classname="F08_Wishlist | user could add items to wishlist" name="user choose an item to add to wishlist" time="6.841">
+<system-out><![CDATA[When user clicks on wishlist button on this product (HTC One M8 Android L5 Lollipop).passed
+Then this product is added successfully to wishlist.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="F08_Wishlist | user could add items to wishlist" name="user choose an item to add to wishlist and verify quantity of that product" time="22.102">
+<system-out><![CDATA[When user clicks on wishlist button on this product (HTC One M8 Android L5 Lollipop).passed
+And clicks on wishlist link.................................................passed
+Then verify the product is added successfully and product quantity is more than zero.passed
+]]></system-out>
+</testcase>
+</testsuite>
